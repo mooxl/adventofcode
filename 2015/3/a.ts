@@ -29,9 +29,9 @@ input.split("").forEach((move, i) => {
   if (houses[x][y] === undefined) houses[x][y] = 0;
   houses[x][y]++;
 });
-const lucky = houses.reduce((prev, cur) => {
-  const thisArr: number[] = cur.filter((thi) => typeof thi === "number");
-  return prev + thisArr.length;
-}, 0);
+const lucky = houses.reduce(
+  (prev, cur) => prev + cur.filter((thi) => typeof thi === "number").length,
+  0
+);
 
 console.log(lucky);
